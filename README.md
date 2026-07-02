@@ -1,4 +1,4 @@
-# sql-learning-journey
+# SQL LEARNING JOURNEY
 
 This repository contains my SQL practice code while learning:
 SQL Basics & Database Fundamentals
