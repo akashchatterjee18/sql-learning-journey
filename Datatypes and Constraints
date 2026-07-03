@@ -1,0 +1,69 @@
+A data type defines the type of values that can be stored in a column of a table.
+
+## Numeric Data Types
+Used to store numbers.
+
+| Data Type          | Description                           | Example          |
+|--------------------|---------------------------------------|------------------|
+| SMALLINT           | Small integer                         | `250`            |
+| INTEGER / INT      | Whole numbers                         | `1500`           |
+| BIGINT             | Very large integers                   | `9876543210`     |
+| DECIMAL(p,s)       | Exact decimal values                  | `99.95`          |
+| NUMERIC(p,s)       | Same as `DECIMAL`                     | `45.678`         |
+| REAL               | Single-precision floating-point       | `12.45`          |
+| FLOAT              | Approximate decimal number            | `3.14159`        |
+| DOUBLE PRECISION   | Double-precision floating-point       | `12345.6789`     |
+
+p (Precision): The total number of digits that can be stored (before and after the decimal point).
+s (Scale): The number of digits to the right of the decimal point.
+
+## Character Data Types
+Used to store text.
+
+| Data Type    | Description            |
+| :----------- | :--------------------- |
+| `CHAR(n)`    | Fixed-length string    |
+| `VARCHAR(n)` | Variable-length string |
+| `TEXT`       | Large amount of text   |
+
+## Boolean Data Type
+Used to store logical values.
+BOOLEAN is the datatype and the possible values are TRUE, FALSE and NULL.
+| Value   | Description                          |
+| :------ | :----------------------------------- |
+| `TRUE`  | Represents a true condition.         |
+| `FALSE` | Represents a false condition.        |
+| `NULL`  | Represents an unknown or missing value. |
+
+## Date and Time Data Types
+Used to store dates, times, and durations.
+
+| Data Type   | Description      | Example               |
+| :---------- | :--------------- | :-------------------- |
+| `DATE`      | Date only        | `2026-07-03`          |
+| `TIME`      | Time only        | `15:30:45`            |
+| `TIMESTAMP` | Date and time    | `2026-07-03 15:30:45` |
+| `INTERVAL`  | Time duration    | `2 days 5 hours`      |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
