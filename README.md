@@ -3,8 +3,7 @@
 This repository contains my SQL practice code while learning:
 SQL Basics & Database Fundamentals
 - CRUD Operations
-- Data Types
-- Constraints
+- Datatypes and Constraints
 - Clauses & Operators
 - Aggregate & String Functions
 - CASE Statements
