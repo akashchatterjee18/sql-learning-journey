@@ -43,3 +43,33 @@ select name as Item_Name, price as Item_Price from products;
 
 Q9. Show all the unique categories from the products.
 select distinct category from products;
+
+
+## Operators
+
+- Comparison Operators (=,!=,<,>,<=,>=)
+eg1 : 
+Show all products where the category is not 'Electronics'.
+select * from products where category != 'Electronics';
+eg2 : 
+Show all products where the price is greater than 1000.
+select * from products where price > 1000;
+
+- Range Operators (Between)
+
+
+- Set Operators (In)
+
+
+- Pattern Operators (Like)
+
+
+- Logical Operators (AND,OR,NOT)
+
+
+
+
+
+
+
+
