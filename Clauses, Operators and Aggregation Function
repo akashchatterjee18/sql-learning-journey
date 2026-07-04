@@ -1,1 +1,45 @@
+## Clauses
 
+Clauses are mainly usednfor querying the data and are kind of building.
+
+| SQL Clause | Purpose |
+| `SELECT`   | Choose which columns to display |
+| `FROM`     | Specify the table |
+| `WHERE`    | Filter rows based on a condition |
+| `GROUP BY` | Group rows for aggregation |
+| `HAVING`   | Filter aggregated groups (used after `GROUP BY`) |
+| `ORDER BY` | Sort the result in ascending or descending order |
+| `LIMIT`    | Limit the number of rows returned |
+| `AS`       | Rename columns or tables temporarily (aliasing) |
+| `DISTINCT` | Return only unique/distinct values |
+
+use data from learning project 1
+
+CLAUSES TEST
+
+Q1. Show the name and price of all products.
+select name,price from products;
+
+Q2. Show all products where the category is 'Electronics'.
+select * from products where category = 'Electronics';
+
+Q3. Group products by category. Show each category once.
+select category from products group by category;
+
+Q4. Show categories that have more than 1 product. (Use after GROUP BY)
+select category from products group by category having count(*)>1;
+
+Q5. Show all products sorted by price in ascending order.
+select * from products order by price;
+
+Q6. Show all products sorted by price in descending order.
+select * from products order by price desc;
+
+Q7. Show only the first 3 products from the table.
+select * from products limit 3;
+
+Q8. Show product name as "Item_Name" and price as "Item_Price".
+select name as Item_Name, price as Item_Price from products;
+
+Q9. Show all the unique categories from the products.
+select distinct category from products;
