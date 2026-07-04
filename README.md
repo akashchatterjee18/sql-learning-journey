@@ -3,9 +3,12 @@
 This repository contains my SQL practice code while learning:
 SQL Basics & Database Fundamentals
 - CRUD Operations
-- Datatypes and Constraints
-- Clauses & Operators
-- Aggregate & String Functions
+- Datatypes
+- Constraints
+- Clauses
+- Operators
+- Aggregate Functions
+- String Functions
 - CASE Statements
 - ALTER TABLE
 - Relationships (1:1, 1:M, M:N)
