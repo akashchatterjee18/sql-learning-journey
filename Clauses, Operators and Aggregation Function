@@ -1,7 +1,6 @@
 ## Clauses
 
 Clauses are mainly usednfor querying the data and are kind of building.
-
 | SQL Clause | Purpose |
 | `SELECT`   | Choose which columns to display |
 | `FROM`     | Specify the table |
@@ -56,15 +55,67 @@ Show all products where the price is greater than 1000.
 select * from products where price > 1000;
 
 - Range Operators (Between)
-
+eg :
+Show all products where the price is greater than 400 and less than 1000.
+select * from products where price between 400 and 1000;
 
 - Set Operators (In)
-
+eg : 
+Show all products where the category is 'Electronics' or 'Fitness' or 'Home & Kitchen'.
+select * from products where category in ('Electronics','Fitness','Home & Kitchen');
 
 - Pattern Operators (Like)
-
+eg1 :
+Show all products where the 1st lettter of sku have 'W'.
+select * from products where sku_code like 'W%';
+W% implies 1st letter W and then whatever...
+eg2 :
+Show all products where sku have '123' in them.
+select * from products where sku_code like '%123%';
+%123% implies it can start with anything and end with anything but in between somewhere 123 must be there.
+eg3 :
+Show all products where the 1st lettter of sku have 'B'.
+select * from products where sku_code like '_B%';
+_B% implies 1st letter anything, second letter 'B' and then whatever
 
 - Logical Operators (AND,OR,NOT)
+eg1 : 
+Show all products where the category is not 'Electronics'.
+select * from products where not category = 'Electronics';
+
+
+## Aggregate Functions
+used to summarise data
+| Function  | Purpose               | Example                     |
+| `COUNT()` | Count number of rows  | Total number of products    |
+| `SUM()`   | Add numeric values    | Total stock in a category   |
+| `AVG()`   | Calculate average     | Average price of accessories|
+| `MIN()`   | Find smallest value   | Cheapest product            |
+| `MAX()`   | Find highest value    | Most expensive product      |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
