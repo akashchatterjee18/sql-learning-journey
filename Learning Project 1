@@ -1,0 +1,25 @@
+Create a Database named Flipkart_db and then create a table with:
+Product ID - Serial
+name - String
+sku_code 8 digit - String
+Price max (99999999) - number
+Stock_Quantity must be greater than 0 - Number
+Is available default true - Boolean
+Category not null - String
+Added_on - Date
+Last_update - Date
+
+create database Flipkart_db;
+
+create table products(
+product_id serial primary key,
+name varchar(50) not null,
+sku_code char(8) unique not null,
+price numeric(10,2) check (price >= 0),
+stock_quantity int default 0 check (stock_quantity >=0),
+is_available boolean default TRUE,
+category text not null,
+added_on date default current_date,
+last_update Timestamp default now()
+)
+
