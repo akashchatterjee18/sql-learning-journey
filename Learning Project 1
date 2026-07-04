@@ -1,3 +1,5 @@
+## Problem
+
 Create a Database named Flipkart_db and then create a table with:
 Product ID - Serial
 name - String
@@ -8,6 +10,10 @@ Is available default true - Boolean
 Category not null - String
 Added_on - Date
 Last_update - Date
+
+
+
+## Solution
 
 create database Flipkart_db;
 
@@ -36,4 +42,4 @@ values
 ('Yoga Mat', 'YM901234', 499.00, 25, TRUE, 'Fitness'),
 ('Water Bottle', 'WB012345', 349.00, 60, TRUE, 'Fitness');
 
-
+select * from products;
