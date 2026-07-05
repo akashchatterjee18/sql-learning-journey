@@ -10,21 +10,23 @@ They help us:
 examples from learning project 1
 # upper(), lower() and length() function
 select upper(name) from products;
-select upper(name) from products;
+select lower(name) from products;
 select length(name) from products;
 -- here upper() or lower() function or length() are examples of string function
 -- upper() makes all the letters / strings uppercase.
 -- lower() makes all the letters / strings lowercase.
--- length() returns all the character length of the selected column.
-
+-- length() returns the number of characters in the selected column.
 # Substring
-It is used to extract some portion from your string.
-syntax : substring(text, location, length)
-eg1 : select name, substring(sku_code, 1, 2) from products;
+It is used to extract a portion of a string.
+syntax : 
+substring(text, location, length)
+eg1 : 
+select name, substring(sku_code, 1, 2) from products;
 eg of the concept:
 substring('Brother in arms', 1,2)
-here 1 is location and 2 is length.
-so Br will be the output
+Here, 1 is the starting location and 2 is the length.
+So the output will be:
+Br
 eg2 :
 substring('Brother in arms', 1,7)
 Brother
@@ -42,7 +44,7 @@ select lower(substring(sku_code,1,2)) from products;
 # left() and right() function
 
 Both have the use case similar to substring().
-Get n leftmost and rightmost elements.
+Returns the leftmost or rightmost n characters of a string.
 select left(sku_code, 2) from products;
 select left('Brother in arms', 7);
 
@@ -51,12 +53,13 @@ select right(sku_code, 2) from products;
 select right('Brother in arms',4);
 
 ## Concat Functions
-concat() joins 2 strings together. There are 2 concat functions
+concat() joins 2 strings together.
+There are 2 concat functions
 select concat(name, ' ', category) from products;
 select concat_ws(':', name, category) from products;
 
 
--- We use concat_ws() (ws = with separator) to concatenate multiple columns using a separator at once.
+-- We use concat_ws() (ws = with separator) to concatenate multiple columns using a separator.
 -- It automatically inserts the separator between the values.
 
 
@@ -66,7 +69,9 @@ replace() - this function replaces any text you want with another value.
 select replace(sku_code, left(sku_code, 2), 'GG') from products;
 
 select replace('postgresql', 'sql', 'database');
-output : postgredatabase
-,,,,,,,,,,,,,,,,,,,,,,,
+output : 
+postgredatabase
+
 select trim('   hello world   ');
-output : hello world
+output : 
+hello world
