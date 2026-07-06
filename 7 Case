@@ -1,1 +1,66 @@
+Case
+-- CASE is a conditional expression in SQL that works like an if-else or switch statement.
+-- It returns different values based on different conditions — all within a single query.
 
+WHY DO WE USE CASE?
+-- To create custom columns on-the-fly
+-- To categorize data based on certain logic
+-- To replace values conditionally
+-- To handle nulls or missing values gracefully
+-- To simplify complex logic inside SELECT queries
+
+syntax :
+select column_name,
+case when condition1 then result1
+     when condition2 then result2
+     when condition3 then result3
+     else default_result
+end as new_column_name from table_name;
+
+eg1 :
+Add a custom column in which you will have price_tag.
+If the price is above 1000, you will say it is expensive.
+If the price is between 500 and 1000, you will say it is moderate.
+If the price is below 500, it is cheap.
+show name and price as well
+solution :
+select name, price,
+case when (price > 1000) then 'Expensive'
+	 when (price between 500 and 1000) then 'Moderate'
+	 else'Cheap'
+end as "price_tag" from products;
+-- This is just a virtual data not the real data. I mean this will not alter the table.
+-- to add it permanently we have to go through few steps :
+# 1st step : Create a new column
+alter table products add column price_tag text;
+-- now all the values here are null
+# 2nd step : Update the column using case
+update products set price_tag =
+case
+  when (price > 1000) then 'Expensive'
+  when (price between 500 and 1000) then 'Moderate'
+	else 'Cheap'
+end;
+
+eg2 :
+Inside the is_available column, you have boolean values (true and false).
+Show a new column using CASE with values 'In Stock' and 'Out of Stock' with name and price.
+solution:
+select name,price, is_available,
+case
+  when is_available = 'true' then 'In Stock'
+  else 'Out of Stock'
+end as "Availability" from products;
+
+eg 3: HIGHLIGHT STOCK STATUS
+Show product name, stock quantity, and label:
+"High Stock" if quantity > 100
+"Medium Stock" if between 30 and 100
+"Low Stock" otherwise
+solution :
+select name, stock_quantity ,
+case
+  when stock_quantity > 100 then 'High Stock'
+  when stock_quantity between 30 and 100 then 'Medium Stock'
+  else 'Low Stock'
+end as "stock_status" from products;
