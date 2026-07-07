@@ -15,9 +15,6 @@ SQL Basics & Database Fundamentals
 - Joins
 - Views
 - Procedures
-- Subqueries
-- Common Table Expressions (CTEs)
-- Window Functions
 - Practice Exercises & Tests
 
 Tech Stack:
