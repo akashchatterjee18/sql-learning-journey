@@ -1,1 +1,82 @@
+## Views
+A view is a virtual table based on a SQL query.
+It does not store actual data, but shows results when accessed – just like a saved query.
 
+Use of views :
+-- Save a long query and access it like a table.                            
+-- No need to rewrite JOINs or filters again and again.                     
+-- Expose only selected columns instead of giving full access to the table. 
+-- Hide table complexity for front-end/dashboard users.                     
+-- If logic changes, update the view; changes reflect everywhere.           
+
+creating view syntax :
+create view view_name as
+select column1, column2, ...
+from table_name
+where condition;
+
+eg :
+create view fitness_products as
+select product_id,name,price,stock_quantity from products
+where category = 'Fitness';
+
+viewing a view :
+select * from fitness_products;
+
+now lets create another view :
+Create a View for Low Stock Products:
+
+create view low_stock_products as
+select name, category, stock_quantity
+from products
+where stock_quantity < 30;
+
+select * from low_stock_products;
+
+deleting a view:
+drop view view_name;
+
+
+## Procedures
+-- A procedure is a block of SQL code that performs a series of operations like inserting, updating, deleting, or selecting data—and is stored in the database.
+-- Think of it like a function in programming—once defined, you can call it again and again without rewriting the logic.
+
+| Benefit                   | Explanation                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| **Reusability**           | Write once, use many times.                                                    |
+| **Security**              | Logic is stored in the DB, no need to give direct access to all tables.        |
+| **Faster Execution**      | Compiled and stored on the DB server.                                          |
+| **Encapsulation**         | Hide complex logic in one callable block.                                      |
+| **Multi-step Operations** | Perform multiple queries like insert + update + log creation in one procedure. |
+
+creating a procedure syntax :
+create procedure procedure_name(parameter1 datatype,
+parameter2 datatype,...)
+language plpgsql
+as $$
+begin
+    -- sql statements
+end;
+$$;
+
+call procedure_name(value1,value2);
+
+# create a procedure for adding new product in database
+create procedure add_product(
+p_name varchar,
+p_sku char(8),
+p_price numeric,
+p_qty int,
+p_category text
+)
+language plpgsql
+as $$
+begin
+insert into products(name, sku_code, price, stock_quantity, category)
+values (p_name, p_sku, p_price, p_qty, p_category);
+
+raise notice 'Product added successfully!';
+end;
+$$;
+
+call add_product ('Flower Vase','FV234567',530.00,15,'Home & Kitchen');
